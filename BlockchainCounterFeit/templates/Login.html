@@ -1,0 +1,221 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta
+      name="keywords"
+      content="Specific Template, HTML CSS, free website template"
+    />
+    <meta
+      name="description"
+      content="Specific Template is a free website template provided by TemplateMo.com"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='templatemo_style.css') }}"
+    />
+    <script language="Javascript">
+      function validate() {
+        var x = document.forms['f1']['t1'].value;
+        var y = document.forms['f1']['t2'].value;
+        if (x == null || x == '') {
+          window.alert('Username must be entered');
+          document.f1.t1.focus();
+          return false;
+        }
+        if (y == null || y == '') {
+          window.alert('Password must be entered');
+          document.f1.t2.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #121212, #1d1d1d);
+        color: #f5f5f5;
+        overflow-x: hidden;
+      }
+
+      #templatemo_header_wrapper {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #444;
+      }
+
+      #templatemo_header #title {
+        color: #f5f5f5;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      #templatemo_menu_wrapper {
+        background: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      #templatemo_menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #templatemo_menu ul li {
+        margin: 0 15px;
+      }
+
+      #templatemo_menu ul li a {
+        text-decoration: none;
+        color: #f5f5f5; /* Navbar text color */
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      #templatemo_menu ul li a:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      .entry {
+        text-align: center;
+        margin: 50px auto;
+        color: #f5f5f5;
+      }
+
+      .entry h3 {
+        color: #f5f5f5;
+        font-size: 1.5rem;
+      }
+
+      form {
+        background: linear-gradient(to right, #121212, #333);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        max-width: 400px;
+        margin: 0 auto;
+        color: #f5f5f5;
+        position: relative;
+        top: -50px;
+      }
+
+      form table {
+        width: 100%;
+      }
+
+      form th {
+        text-align: left;
+        font-size: 1.2rem;
+        color: #f5f5f5;
+      }
+
+      form input[type='text'],
+      form input[type='password'] {
+        width: 100%; /* Same length as the navbar text */
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #444;
+        border: 1px solid #333;
+        color: #f5f5f5; /* Matching the navbar text color */
+        border-radius: 5px;
+        font-size: 1rem;
+      }
+
+      form input[type='submit'] {
+        background-color: #f5a623;
+        color: #121212;
+        padding: 15px 30px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      form input[type='submit']:hover {
+        background-color: #ff7f50;
+      }
+
+      form th,
+      form td {
+        color: #f5f5f5 !important; /* Ensure text inside table cells are white */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="templatemo_header_wrapper">
+      <div id="templatemo_header">
+        <div id="title">Fake Product Identification Using Blockchain</div>
+      </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+      <div id="templatemo_menu">
+        <ul>
+          <li><a href="index">Home</a></li>
+          <li><a href="AdminLogin">Admin Login Here</a></li>
+          <li><a href="Login">Consumer Login Here</a></li>
+          <li><a href="SLogin">Supplier Login Here</a></li>
+          <li><a href="RLogin">Retailer Login Here</a></li>
+          <li><a href="Signup">New User Signup Here</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <br /><br /><br />
+      <div class="msg">
+        <font size="3" color="red"><center>{{ msg }}</center></font>
+      </div>
+      <br /><br />
+      <center>
+        <font size="4" color="black"><h3>User Login Screen</h3></font>
+      </center>
+      <form
+        name="f1"
+        method="post"
+        action="/LoginAction"
+        onsubmit="return validate(this);"
+      >
+        <br /><br />
+        <table align="center" width="30%" class="notepad">
+          <tr>
+            <th align="left"><font size="2" color="#f5f5f5">Username</font></th>
+            <!-- Correct text color -->
+            <td>
+              &nbsp;<input
+                type="text"
+                name="t1"
+                value=""
+                onchange="fnCallChkAvailability(this)"
+              />
+              <div id="nameid"></div>
+            </td>
+          </tr>
+          <tr>
+            <th align="left"><font size="2" color="#f5f5f5">Password</font></th>
+            <!-- Correct text color -->
+            <td>&nbsp;<input type="password" name="t2" value="" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Login" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

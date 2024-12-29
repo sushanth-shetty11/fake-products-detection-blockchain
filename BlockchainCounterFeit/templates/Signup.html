@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta name="keywords" content="Specific Template, HTML CSS, free website template" />
+    <meta name="description" content="Specific Template is a free website template provided by TemplateMo.com" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='templatemo_style.css') }}">
+    <script LANGUAGE="Javascript">
+        function validate() {
+            var x = document.forms["f1"]["t1"].value;
+            var y = document.forms["f1"]["t2"].value;
+            var a1 = document.forms["f1"]["t3"].value;
+            var a2 = document.forms["f1"]["t4"].value;
+            var a3 = document.forms["f1"]["t5"].value;
+
+            if (x == null || x == "") {
+                window.alert("Username must be entered");
+                document.f1.t1.focus();
+                return false;
+            }
+
+            if (y == null || y == "") {
+                window.alert("Password must be entered");
+                document.f1.t2.focus();
+                return false;
+            }
+
+            if (a1 == null || a1 == "") {
+                alert("Please enter phone number");
+                document.f1.t3.focus();
+                return false;
+            }
+
+            if (!a1.match(/^\d{10}$/)) {
+                window.alert("Valid phone number must be entered");
+                document.f1.t3.focus();
+                return false;
+            }
+
+            if (a2 == null || a2 == "") {
+                alert("Please enter email ID");
+                document.f1.t4.focus();
+                return false;
+            }
+
+            var filter = /^([a-zA-Z0-9_\.\-])+@([a-z]+\.)+(com)+$/;
+            if (!filter.test(a2)) {
+                window.alert("Please enter a valid email address");
+                document.f1.t4.focus();
+                return false;
+            }
+
+            if (a3 == null || a3 == "") {
+                alert("Please enter address");
+                document.f1.t5.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #121212, #1d1d1d);
+            color: #f5f5f5;
+            overflow-x: hidden;
+        }
+
+        #templatemo_header_wrapper {
+            background: #222;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #444;
+        }
+
+        #templatemo_header #title {
+            color: #f5f5f5;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        #templatemo_menu_wrapper {
+            background: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        #templatemo_menu ul {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        #templatemo_menu ul li {
+            margin: 0 15px;
+        }
+
+        #templatemo_menu ul li a {
+            text-decoration: none;
+            color: #f5f5f5;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        #templatemo_menu ul li a:hover {
+            background: #f5a623;
+            color: #121212;
+        }
+
+        .entry {
+            max-width: 600px;
+            margin: 30px auto;
+            background: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #f5f5f5;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #f5f5f5;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #f5f5f5;
+            background-color: #444;
+        }
+
+        input[type="submit"] {
+            background: #f5a623;
+            color: #121212;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background: #ff7f50;
+        }
+
+        .msg {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="templatemo_header_wrapper">
+        <div id="templatemo_header">
+            <div id="title">
+                Fake Product Identification Using Blockchain
+            </div>
+        </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+        <div id="templatemo_menu">
+            <ul>
+                <li><a href="index">Home</a></li>
+                <li><a href="AdminLogin">Admin Login</a></li>
+                <li><a href="Login">Consumer Login</a></li>
+                <li><a href="SLogin">Supplier Login</a></li>
+                <li><a href="RLogin">Retailer Login</a></li>
+                <li><a href="Signup">New User Signup</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="entry">
+        <h3>User Signup Screen</h3>
+        <div class="msg">{{ msg }}</div>
+        <form name="f1" method="post" action="/SignupAction" onsubmit="return validate();">
+            <table align="center" width="100%">
+                <tr>
+                    <th align="left"><label for="t1">Username</label></th>
+                    <td><input type="text" name="t1" id="t1" /></td>
+                </tr>
+                <tr>
+                    <th align="left"><label for="t2">Password</label></th>
+                    <td><input type="password" name="t2" id="t2" /></td>
+                </tr>
+                <tr>
+                    <th align="left"><label for="t3">Contact No</label></th>
+                    <td><input type="text" name="t3" id="t3" maxlength="10" /></td>
+                </tr>
+                <tr>
+                    <th align="left"><label for="t4">Email ID</label></th>
+                    <td><input type="text" name="t4" id="t4" /></td>
+                </tr>
+                <tr>
+                    <th align="left"><label for="t5">Address</label></th>
+                    <td><input type="text" name="t5" id="t5" /></td>
+                </tr>
+                <tr>
+                    <th align="left"><label for="utype">User Type</label></th>
+                    <td>
+                        <select name="utype" id="utype">
+                            <option value="Supplier">Supplier</option>
+                            <option value="Retailer">Retailer</option>
+                            <option value="Consumer">Consumer</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+		<br>
+		<br>
+		
+    </div>
+</body>
+</html>

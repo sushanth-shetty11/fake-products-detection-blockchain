@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta
+      name="keywords"
+      content="Specific Template, HTML CSS, free website template"
+    />
+    <meta
+      name="description"
+      content="Specific Template is a free website template provided by TemplateMo.com"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='templatemo_style.css') }}"
+    />
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #121212, #1d1d1d);
+        color: #f5f5f5;
+        overflow-x: hidden;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      #templatemo_header_wrapper {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #444;
+      }
+
+      #templatemo_header #title {
+        color: #f5f5f5;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      #templatemo_menu_wrapper {
+        background: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      #templatemo_menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #templatemo_menu ul li {
+        margin: 0 15px;
+      }
+
+      #templatemo_menu ul li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      #templatemo_menu ul li a:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      .content {
+        flex: 1; /* Makes the content area take up available space */
+        padding: 20px;
+        text-align: center;
+      }
+
+      table {
+        width: 80%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background: #333;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        overflow: hidden;
+        color: #f5f5f5;
+      }
+
+      table th,
+      table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #444;
+      }
+
+      table th {
+        background: #444;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      table tr:nth-child(even) {
+        background: #555;
+      }
+
+      table tr:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      footer {
+        background: #222;
+        color: #f5f5f5;
+        text-align: center;
+        padding: 10px 20px;
+        border-top: 2px solid #444;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: auto; /* Push footer to the bottom */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="templatemo_header_wrapper">
+      <div id="templatemo_header">
+        <div id="title">Fake Product Identification Using Blockchain</div>
+      </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+      <div id="templatemo_menu">
+        <ul>
+          <li><a href="AddProduct">Add Product Details</a></li>
+          <li><a href="ViewProduct">View Product Details</a></li>
+          <li><a href="ViewUsers">View Users</a></li>
+          <li><a href="index">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content">
+      <h3>Product Details</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ msg | safe }}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

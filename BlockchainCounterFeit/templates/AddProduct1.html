@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta
+      name="keywords"
+      content="Specific Template, HTML CSS, free website template"
+    />
+    <meta
+      name="description"
+      content="Specific Template is a free website template provided by TemplateMo.com"
+    />
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #121212, #1d1d1d);
+        color: #f5f5f5;
+      }
+
+      /* Header Section */
+      #templatemo_header_wrapper {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #444;
+      }
+
+      #templatemo_header #title {
+        color: #f5f5f5;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      /* Menu Section */
+      #templatemo_menu_wrapper {
+        background: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      #templatemo_menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #templatemo_menu ul li {
+        margin: 0 15px;
+      }
+
+      #templatemo_menu ul li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      #templatemo_menu ul li a:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      /* Entry Section */
+      .entry {
+        padding: 30px;
+        background: linear-gradient(to right, #121212, #333);
+        color: #f5f5f5;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        max-width: 800px;
+        margin: 30px auto;
+      }
+
+      .entry h3 {
+        text-align: center;
+        color: #f5f5f5;
+        font-size: 1.5rem;
+      }
+
+      .msg {
+        color: #ff4d4d;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Table Section */
+      .notepad {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-collapse: collapse;
+        color: #f5f5f5;
+      }
+
+      .notepad th {
+        text-align: left;
+        padding: 10px;
+        font-size: 1rem;
+      }
+
+      .notepad td {
+        padding: 10px;
+      }
+
+      input[type='text'],
+      input[type='file'] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 5px;
+        background: #1d1d1d;
+        color: #f5f5f5;
+      }
+
+      input[type='submit'] {
+        padding: 10px 20px;
+        background: #f5a623;
+        color: #121212;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      input[type='submit']:hover {
+        background: #ffa94d;
+      }
+    </style>
+    <script>
+      function validate() {
+        var x = document.forms['f1']['t1'].value;
+        var y = document.forms['f1']['t2'].value;
+        var a1 = document.forms['f1']['t3'].value;
+        var a2 = document.forms['f1']['t4'].value;
+        var a3 = document.forms['f1']['t5'].value;
+        var a4 = document.forms['f1']['t6'].value;
+
+        if (!x) {
+          alert('Product ID must be entered');
+          document.f1.t1.focus();
+          return false;
+        }
+        if (!y) {
+          alert('Product name must be entered');
+          document.f1.t2.focus();
+          return false;
+        }
+        if (!a1) {
+          alert('Please enter Product Price');
+          document.f1.t3.focus();
+          return false;
+        }
+        if (!a2) {
+          alert('Please enter manufacturing details');
+          document.f1.t4.focus();
+          return false;
+        }
+        if (!a3) {
+          alert('Please enter company details');
+          document.f1.t5.focus();
+          return false;
+        }
+        if (!a4) {
+          alert('Please upload Barcode file');
+          document.f1.t6.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="templatemo_header_wrapper">
+      <div id="templatemo_header">
+        <div id="title">Fake Product Identification Using Blockchain</div>
+      </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+      <div id="templatemo_menu">
+        <ul>
+          <li><a href="AddProduct">Add Product Details</a></li>
+          <li><a href="ViewProduct">View Product Details</a></li>
+          <li><a href="ViewUsers">View Users</a></li>
+          <li><a href="index">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="msg">{{ msg | safe }}</div>
+      <h3>Add New Product Details Screen</h3>
+      <form
+        name="f1"
+        method="post"
+        action="/AddProductAction"
+        enctype="multipart/form-data"
+        onsubmit="return validate()"
+      >
+        <table class="notepad">
+          <tr>
+            <th>Product ID</th>
+            <td>
+              {% if pid %}
+              <input type="text" name="t1" value="{{ pid }}" />
+              {% else %}
+              <input type="text" name="t1" value="" />
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <th>Product Name</th>
+            <td>
+              {% if pname %}
+              <input type="text" name="t2" value="{{ pname }}" />
+              {% else %}
+              <input type="text" name="t2" value="" />
+              {% endif %}
+            </td>
+          </tr>
+          <tr>
+            <th>Product Price</th>
+            <td><input type="text" name="t3" value="" /></td>
+          </tr>
+          <tr>
+            <th>Manufacturing Details</th>
+            <td><input type="text" name="t4" value="" /></td>
+          </tr>
+          <tr>
+            <th>Company Details</th>
+            <td><input type="text" name="t5" value="" /></td>
+          </tr>
+          <tr>
+            <th>Upload Barcode</th>
+            <td><input type="file" name="t6" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center">
+              <input type="submit" value="Submit" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

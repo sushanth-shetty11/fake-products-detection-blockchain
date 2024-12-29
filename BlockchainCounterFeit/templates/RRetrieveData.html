@@ -1,0 +1,194 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta
+      name="keywords"
+      content="Specific Template, HTML CSS, free website template"
+    />
+    <meta
+      name="description"
+      content="Specific Template is a free website template provided by TemplateMo.com"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='templatemo_style.css') }}"
+    />
+    <script language="Javascript">
+      function validate() {
+        var x = document.forms['f1']['t1'].value;
+        if (x == null || x == '') {
+          window.alert('Product ID must be entered');
+          document.f1.t1.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #f0f0f0;
+        color: #333;
+      }
+
+      #templatemo_header_wrapper {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #444;
+      }
+
+      #templatemo_header #title {
+        color: #f5f5f5;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      #templatemo_menu_wrapper {
+        background: #333;
+        margin-bottom: 30px;
+      }
+
+      #templatemo_menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #templatemo_menu ul li {
+        margin: 0 15px;
+      }
+
+      #templatemo_menu ul li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      #templatemo_menu ul li a:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      .entry {
+        padding: 30px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        margin: 30px auto;
+        width: 60%;
+      }
+
+      .msg {
+        color: red;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      table {
+        width: 100%;
+        margin: 20px 0;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f5a623;
+        color: white;
+      }
+
+      input[type='text'] {
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+
+      input[type='submit'] {
+        padding: 10px 20px;
+        background-color: #f5a623;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1rem;
+      }
+
+      input[type='submit']:hover {
+        background-color: #f57f17;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="templatemo_header_wrapper">
+      <div id="templatemo_header">
+        <div id="title">Fake Product Identification Using Blockchain</div>
+      </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+      <div id="templatemo_menu">
+        <ul>
+          <li><a href="SRetrieveData">Retrieve Product Data</a></li>
+          <li><a href="index">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="msg">
+        <center>{{ msg }}</center>
+      </div>
+
+      <center>
+        <font size="4" color="black"
+          ><h3>Retrieve Product Details Screen</h3></font
+        >
+      </center>
+
+      <form
+        name="f1"
+        method="post"
+        action="/RRetrieveDataAction"
+        onsubmit="return validate(this);"
+      >
+        <table align="center">
+          <tr>
+            <th align="left">Product ID</th>
+            <td>
+              <input
+                type="text"
+                name="t1"
+                value=""
+                onchange="fnCallChkAvailability(this)"
+              />
+              <div id="nameid"></div>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

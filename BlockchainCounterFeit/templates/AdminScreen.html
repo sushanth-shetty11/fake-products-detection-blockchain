@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fake Product Identification Using Blockchain</title>
+    <meta
+      name="keywords"
+      content="Specific Template, HTML CSS, free website template"
+    />
+    <meta
+      name="description"
+      content="Specific Template is a free website template provided by TemplateMo.com"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='templatemo_style.css') }}"
+    />
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to bottom, #121212, #1d1d1d);
+        color: #f5f5f5;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Header Styling */
+      #templatemo_header_wrapper {
+        background: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid #444;
+      }
+
+      #templatemo_header #title {
+        color: #f5f5f5;
+        font-size: 2.5rem;
+        font-weight: bold;
+        animation: slideInDown 1.5s ease-out;
+      }
+
+      /* Title Animation */
+      @keyframes slideInDown {
+        0% {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      /* Menu Styling */
+      #templatemo_menu_wrapper {
+        background: #333;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      #templatemo_menu ul {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      #templatemo_menu ul li {
+        margin: 0 15px;
+      }
+
+      #templatemo_menu ul li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        display: block;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+      }
+
+      #templatemo_menu ul li a:hover {
+        background: #f5a623;
+        color: #121212;
+      }
+
+      /* Dashboard Content Styling */
+      #templatemo_content_wrapper {
+        flex: 1;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 30px;
+        border-radius: 15px;
+        background: #222;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        color: #f5f5f5;
+      }
+
+      .welcome-text {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #f5a623;
+        margin-bottom: 20px;
+        animation: textGlow 1.5s infinite alternate;
+      }
+
+      @keyframes textGlow {
+        0% {
+          text-shadow: 0 0 10px #f5a623, 0 0 20px #f5a623;
+        }
+        100% {
+          text-shadow: 0 0 20px #ff7f50, 0 0 30px #ff7f50;
+        }
+      }
+
+      .dashboard {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .dashboard .card {
+        background: #333;
+        color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin: 10px;
+        flex: 1;
+        min-width: 250px;
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .dashboard .card:hover {
+        transform: translateY(-10px);
+        background: #444;
+      }
+
+      .dashboard .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #f5a623;
+      }
+
+      .dashboard .card p {
+        font-size: 1rem;
+        color: #ccc;
+      }
+
+      /* Moving Animation Section */
+      .animation-section {
+        margin-top: 40px;
+        padding: 20px;
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+        background: #1d1d1d; /* Updated background to match the page theme */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Floating Circles Animation */
+      @keyframes floatUp {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+      }
+
+      .floating-circle {
+        width: 50px;
+        height: 50px;
+        background-color: #f5a623;
+        border-radius: 50%;
+        position: absolute;
+        animation: floatUp 5s infinite ease-in-out;
+        opacity: 0.8;
+      }
+
+      .floating-circle.circle-1 {
+        left: 20%;
+        animation-delay: 0s;
+      }
+
+      .floating-circle.circle-2 {
+        left: 40%;
+        animation-delay: 1s;
+        background-color: #ff7f50;
+      }
+
+      .floating-circle.circle-3 {
+        left: 60%;
+        animation-delay: 2s;
+        background-color: #f5a623;
+      }
+
+      .floating-circle.circle-4 {
+        left: 80%;
+        animation-delay: 3s;
+        background-color: #ff7f50;
+      }
+
+      /* Footer Styling */
+      footer {
+        background: #222;
+        padding: 10px;
+        text-align: center;
+        border-top: 2px solid #444;
+        color: #888;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="templatemo_header_wrapper">
+      <div id="templatemo_header">
+        <div id="title">Fake Product Identification Using Blockchain</div>
+      </div>
+    </div>
+
+    <div id="templatemo_menu_wrapper">
+      <div id="templatemo_menu">
+        <ul>
+          <li><a href="AddProduct">Add Product Details</a></li>
+          <li><a href="ViewProduct">View Product Details</a></li>
+          <li><a href="ViewUsers">View Users</a></li>
+          <li><a href="index">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="templatemo_content_wrapper">
+      <div class="welcome-text">Welcome, Admin!</div>
+      <div class="dashboard">
+        <div class="card">
+          <h3>Products Added</h3>
+          <p>Track and manage product details here.</p>
+        </div>
+        <div class="card">
+          <h3>User Activity</h3>
+          <p>View and monitor user interactions.</p>
+        </div>
+        <div class="card">
+          <h3>Reports</h3>
+          <p>Analyze data and generate reports.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="animation-section">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+      <div class="floating-circle circle-4"></div>
+    </div>
+
+    <footer>
+      &copy; 2024 Fake Product Identification System. All rights reserved.
+    </footer>
+  </body>
+</html>
