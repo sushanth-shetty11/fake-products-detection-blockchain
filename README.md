@@ -13,7 +13,7 @@ This project leverages blockchain technology to detect counterfeit products and 
 🗂️ **Project Structure**
 
 📁 hello-eth: Contains blockchain-related code and smart contracts.
-📁 blockchaincounterfeit: Frontend application built with React.js for user 
+📁 blockchaincounterfeit: Frontend application built with Html and css for user 
 interactions.
 
 ⚙️ **Setup and Usage**
